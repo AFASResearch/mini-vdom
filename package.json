@@ -1,0 +1,25 @@
+{
+  "name": "mini-vdom",
+  "version": "1.0.0",
+  "description": "Material of a live coding session to create a Virtual DOM framework from scratch. Do not use in production, use our maquette library instead.",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AFASResearch/mini-vdom.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AFASResearch/mini-vdom/issues"
+  },
+  "homepage": "https://github.com/AFASResearch/mini-vdom#readme",
+  "devDependencies": {
+    "awesome-typescript-loader": "3.0.8",
+    "typescript": "2.2.1",
+    "webpack": "2.2.1",
+    "webpack-dev-server": "2.4.1"
+  }
+}
