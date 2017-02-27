@@ -1,7 +1,17 @@
-# mini-vdom
+# Mini-vdom
 Material of a live coding session to create a Virtual DOM framework from scratch. Do not use in production, use our maquette library instead.
 
-# This repository is the result from
+## Preparation
+- Clone this repository (in a terminal type: `git clone https://github.com/AFASResearch/mini-vdom.git`)
+- Run `npm install` in a terminal
+- If you need a convenient IDE/Editor for Typescript, install [Visual Studio Code](https://code.visualstudio.com/)
+
+## Running
+- Run `npm start`
+- Open the url http://localhost:9000
+
+
+## This repository is the result from
 
 ### Executing the following commands
 - npm init
