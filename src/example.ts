@@ -15,8 +15,16 @@ let handleKeyDown = (evt: KeyboardEvent) => {
 
 let render = () => {
   return h('div', {}, [
-    h('ul', {}, todos.map(todo => {
+    h('ul', {}, todos.map((todo, index) => {
+
+      let handleClick = (evt: MouseEvent) => {
+        evt.preventDefault();
+        todos.splice(index, 1);
+        projector.scheduleRender();
+      }
+
       return h('li', {}, [
+        h('button', { onclick: handleClick }, 'Done'),
         h('span', {}, todo)
       ])
     })),

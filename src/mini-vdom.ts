@@ -4,6 +4,7 @@ export interface Projector {
 
 export interface VNodeProperties {
   onkeydown?: (evt: KeyboardEvent) => void;
+  onclick?: (evt: MouseEvent) => void;
 }
 
 export interface VNode {
@@ -48,11 +49,16 @@ let create = (vnode: VNode) => {
   if (vnode.properties.onkeydown) {
     result.onkeydown = vnode.properties.onkeydown;
   }
+  if (vnode.properties.onclick) {
+    result.onclick = vnode.properties.onclick;
+  }
 }
 
 let diffAndPatch = (newTree: VNode, oldTree: VNode) => {
   // Adopt previous domNode
   let element = newTree.element = oldTree.element!;
+
+  // TODO: update properties
 
   // handle text content
   if (typeof newTree.content === 'string') {
@@ -85,6 +91,12 @@ let diffAndPatch = (newTree: VNode, oldTree: VNode) => {
       newIndex ++;
     }
     // remove remaining nodes that are no longer present
+    while (oldIndex < oldChildren.length) {
+      let oldChild = oldChildren[oldIndex];
+      let oldElement = oldChild.element!;
+      oldElement.parentElement!.removeChild(oldElement);
+      oldIndex++;
+    }
   }
 };
 
